@@ -7,13 +7,15 @@ public class SimBase : FilterBehaviour
 {
 
 		private List<Task> tasks = new List<Task> ();
-
+		public float tickRate = 1.1f;
+	
 
 		// Use this for initialization
 		void Start ()
 		{
 				StartCoroutine (Live ());
 				api.ApplyFilters ("get_item", 4);
+				api.ApplyFilters ("testfilter", 4, "hurr");
 		}
 	
 		// Update is called once per frame
@@ -26,7 +28,7 @@ public class SimBase : FilterBehaviour
 		{
 				while (true) {
 						api.DoAction ("live");
-						yield return new WaitForSeconds (1);
+						yield return new WaitForSeconds (tickRate);
 				}
 		}
 
