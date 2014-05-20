@@ -1,0 +1,3 @@
+[submodule "Remote/Filters"]
+	path = Remote/Filters
+	url = https://github.com/Biont/Unity3D-Filters.git
